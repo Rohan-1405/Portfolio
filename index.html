@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ocean">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohan's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-[var(--bg)] text-[var(--text)] selection:bg-[var(--brand2)]/30">
+  <!-- Background pattern (static, no animation) -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10">
+    <div class="h-full w-full bg-[radial-gradient(circle_at_1px_1px,var(--grid)_1px,transparent_0)] [background-size:24px_24px] opacity-30"></div>
+  </div>
+
+  <header class="border-b border-[var(--line)]/60 sticky top-0 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--bg)/0.6] z-50">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 font-semibold tracking-wide">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[var(--brand2)] text-[var(--ink)] font-extrabold">R</span>
+        <span>My Portfolio</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-[15px]">
+        <a href="#about" class="hover:text-[var(--brand2)]">About</a>
+        <a href="#skills" class="hover:text-[var(--brand2)]">Skills</a>
+        <a href="#projects" class="hover:text-[var(--brand2)]">Projects</a>
+        <a href="#contact" class="hover:text-[var(--brand2)]">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <!-- Single icon button for theme cycling -->
+        <button id="themeBtn" class="btn" aria-label="Change theme" title="Change theme">🎨</button>
+        <button id="mobileBtn" class="btn md:hidden">☰</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-[var(--line)] bg-[var(--panel)] px-6 py-3">
+      <a href="#about" class="block py-2">About</a>
+      <a href="#skills" class="block py-2">Skills</a>
+      <a href="#projects" class="block py-2">Projects</a>
+      <a href="#contact" class="block py-2">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="container mx-auto px-6 pt-14 md:pt-24 pb-16">
+    <div class="grid lg:grid-cols-5 gap-6">
+      <div class=" lg:col-span-3 p-8">
+        <p class="text-xs tracking-widest text-[var(--muted)]">Open To Opportunities</p>
+        <h1 class="font-display mt-2 text-6xl md:text-5xl leading-tight">
+          Hi, I'm <span class="highlight">Rohan Potla</span>.
+        </h1>
+        <p class="mt-4 text-[var(--muted)] max-w-2xl">Frontend-focused developer crafting delightful, accessible experiences. I love clean design, clear structure, and smooth interactions.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="assets/resume.txt" download class="btn">View Resume</a>
+          <a href="#contact" class="btn">Contact Me</a>
+        </div>
+      </div>
+      <div class="card lg:col-span-2 p-0 overflow-hidden">
+        <div class="aspect-[4/3] grid place-items-center bg-[var(--panel-deep)]">
+          <svg width="180" height="180" viewBox="0 0 200 200">
+            <rect x="30" y="30" width="140" height="140" rx="28" fill="var(--brand2)"/>
+            <circle cx="100" cy="90" r="28" fill="var(--ink)"/>
+            <rect x="60" y="120" width="80" height="26" rx="12" fill="var(--ink)"/>
+          </svg>
+        </div>
+        <!-- <div class="grid grid-cols-3 divide-x divide-[var(--line)]"> -->
+          <div class="p-4 text-center">
+            <div class="stat">4</div><div class="muted">Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento row: About + Quick facts -->
+  <section id="about" class="container mx-auto px-6 pb-4">
+    <div class="grid lg:grid-cols-4 gap-6">
+      <div class="card p-7">
+        <h2 class="h2">About</h2>
+        <p class="muted mt-2">A quick snapshot of who I am and how I work.</p>
+        <ul class="mt-4 space-y-2 text-[15px]">
+          <li>I turn ideas into engaging products with a mix of solid fundamentals and a love for details. I move quickly, communicate clearly, and keep users at the center.</li>
+        </ul>
+      </div>
+      <div class="card p-7">
+        <h3 class="h2">Focus</h3>
+        <div class="chip">Frontend Engineering</div>
+        <!-- <div class="chip">Next.js</div>
+        <div class="chip">TypeScript</div>
+        <div class="chip">Node</div> -->
+      </div>
+      <div class="card p-7">
+        <h3 class="h2">Core Value</h3>
+        <!-- <div class="grid grid-cols-3 gap-2"> -->
+          <div class="chip">Clarity & Craft</div>
+        </div>
+      <div class="card p-7">
+        <h3 class="h2">Location</h3>
+        <!-- <div class="grid grid-cols-3 gap-2"> -->
+          <div class="chip">Remote Friendly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container mx-auto px-6 py-12">
+    <div class="card p-7">
+      <div class="flex items-end justify-between">
+        <div>
+          <h2 class="h2">Skills</h2>
+          <p class="muted mt-1">Balanced across frontend and platform.</p>
+        </div>
+        <div class="tag"><span class="w-2 h-2 rounded-full bg-[var(--brand2)] inline-block mr-2"></span>Always learning</div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div>
+          <div class="meter"><span style="width:95%"></span><label>HTML/CSS</label><b>95%</b></div>
+          <div class="meter"><span style="width:90%"></span><label>JavaScript</label><b>90%</b></div>
+          <div class="meter"><span style="width:86%"></span><label>Accessibility</label><b>86%</b></div>
+        </div>
+        <div>
+          <div class="meter"><span style="width:42%"></span><label>Node.js</label><b>42%</b></div>
+          <div class="meter"><span style="width:58%"></span><label>My SQL</label><b>58%</b></div>
+          <div class="meter"><span style="width:76%"></span><label>Git & CI</label><b>76%</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="container mx-auto px-6 pb-12">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+      <div>
+        <h2 class="h2">Projects</h2>
+        <p class="muted mt-1">Filter or search by title.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 items-center">
+        <button data-filter="all" class="btn small active">All</button>
+        <button data-filter="web" class="btn small">Web</button>
+        <button data-filter="ui" class="btn small">UI</button>
+        <button data-filter="tooling" class="btn small">Tooling</button>
+        <input id="search" placeholder="Search…" class="input ml-2" />
+      </div>
+    </div>
+
+    <div id="projectGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="card project" data-tags="web ui" data-title="Landing Page Revamp">
+        <div class="banner from-[#38bdf8] to-[#a78bfa]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="h4">Portfolio Generator</h3>
+            <span class="muted text-xs">web • ui</span>
+          </div>
+          <p class="muted text-sm">A personal site builder with themes, sections and quick publishing.</p>
+          <ul class="muted text-sm space-y-2 text-[8px]">
+          <li>• 4 Different theme switcher and presents</li>
+          <li>• Drag-and-drop section</li>
+          <li>• One-click publish (demo)</li>
+        </ul>
+          <div class="flex gap-2">
+            <button class="btn-primary open-modal" data-title="Landing Page Revamp" data-desc="A full redesign focused on clarity, speed, and conversions.">Preview</button>
+            <a class="btn" href="#" onclick="alert('Demo link'); return false;">Live</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project" data-tags="tooling" data-title="Build Tool Starter">
+        <div class="banner from-[#34d399] to-[#06b6d4]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="h4">Build Tool Starter</h3>
+            <span class="muted text-xs">tooling</span>
+          </div>
+          <p class="muted text-sm">A tiny starter with instant hot reload, linting and formatting.</p>
+          <ul class="muted text-sm space-y-2 text-[8px]">
+          <li>• Pre-configured scripts</li>
+          <li>• Recommended extensions and settings</li>
+          <li>• Sample folder structure</li>
+        </ul>
+          <div class="flex gap-2">
+            <button class="btn-primary open-modal" data-title="Build Tool Starter" data-desc="Minimal setup for fast development with sensible defaults.">Preview</button>
+            <a class="btn" href="#" onclick="alert('Repo link'); return false;">Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project" data-tags="web" data-title="Build Tool Starter">
+        <div class="banner h-40 bg-gradient-to-br from-[#0ea5e9] to-[#8b5cf6]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="h4">Dashboard Kit</h3>
+            <span class="muted text-xs">web</span>
+          </div>
+          <p class="muted text-sm">A flexible admin dashboard with charts, themes, and widgets.</p>
+          <ul class="muted text-sm space-y-2 text-[8px]">
+          <li>• Light/Dark mode toggle</li>
+          <li>• Cards for KPIs and activity</li>
+          <li>• Area/Bar charts with filters</li>
+        </ul>
+          <div class="flex gap-2">
+            <button class="btn-primary open-modal" data-title="Build Tool Starter" data-desc="Minimal setup for fast development with sensible defaults.">Preview</button>
+            <a class="btn" href="#" onclick="alert('Repo link'); return false;">Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project" data-tags="web" data-title="Dashboard Kit">
+        <div class="banner from-[#f59e0b] to-[#ef4444]"></div>
+        <div class="p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="h4">E-Commerce Mini</h3>
+            <span class="muted text-xs">web</span>
+          </div>
+          <p class="muted text-sm">A lightweight shop with product cards, filters and a demo cart.</p>
+           <ul class="muted text-sm space-y-2 text-[8px]">
+          <li>• Category and price filters</li>
+          <li>• Quick view modal</li>
+          <li>• Local cart storage (demo)</li>
+        </ul>
+          <div class="flex gap-2">
+            <button class="btn-primary open-modal" data-title="Dashboard Kit" data-desc="Customizable admin dashboard with reusable widgets.">Preview</button>
+            <a class="btn" href="#" onclick="alert('Demo link'); return false;">Live</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container mx-auto px-6 pb-16">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card p-7">
+        <h2 class="h2">Get in touch</h2>
+        <p class="muted mt-2">I usually reply within 24–48 hours. Messages save locally—export or clear anytime.</p>
+        <div class="mt-4 flex gap-2">
+          <button id="exportMessages" class="btn">Export Messages</button>
+          <button id="clearMessages" class="btn">Clear Messages</button>
+        </div>
+      </div>
+      <form id="contactForm" class="card p-7 space-y-4">
+        <div>
+          <label class="label">Name</label>
+          <input required id="name" type="text" class="input" placeholder="Your name">
+        </div>
+        <div>
+          <label class="label">Email</label>
+          <input required id="email" type="email" class="input" placeholder="you@example.com">
+        </div>
+        <div>
+          <label class="label">Message</label>
+          <textarea required id="message" rows="5" class="input" placeholder="Say hello..."></textarea>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button type="submit" class="btn-primary">Send Message</button>
+          <a id="mailtoBtn" href="mailto:you@example.com" class="btn-primary">Email me</a>
+        </div>
+        <p id="formNote" class="muted text-xs">Your message will be Saved locally in your browser.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-[var(--line)]">
+    <div class="container mx-auto px-6 py-8 text-sm text-[var(--muted)] flex flex-col sm:flex-row gap-4 items-center justify-between">
+      <div>© <span id="year"></span> Rohan Potla. All rights reserved</div>
+      <a href="#home" class="btn small">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center p-6">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative max-w-xl w-full card p-6">
+      <div class="flex items-start justify-between gap-6">
+        <div>
+          <h3 id="modalTitle" class="h4">Project</h3>
+          <p id="modalDesc" class="muted mt-1">Details</p>
+        </div>
+        <button id="closeModal" class="btn small">Close</button>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <a href="#" onclick="alert('Demo live'); return false;" class="btn-primary text-center">View Live</a>
+        <a href="#" onclick="alert('Demo repo'); return false;" class="btn text-center">View Repo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 hidden">
+    <div class="card px-4 py-3 text-sm flex items-center gap-2">
+      <span>✅</span><span id="toastMsg">Saved!</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

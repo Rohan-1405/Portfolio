@@ -1,0 +1,114 @@
+:root{
+  --bg:#0b0f19;
+  --panel:#0f1524;
+  --panel-deep:#0a0f1a;
+  --text:#e6e8ee;
+  --ink:#081018;
+  --muted:#9aa3b2;
+  --line:#1f2937;
+  --grid:#1b2536;
+  --brand1:#6ee7b7;
+  --brand2:#60a5fa;
+  --brand3:#f472b6;
+}
+
+/* Themes */
+[data-theme="ocean"]{
+  --bg:#0a1220; --panel:#0f1b2f; --panel-deep:#0a1526;
+  --text:#e7f1ff; --muted:#9fb3c8; --line:#27364a; --grid:#1a2940;
+  --brand1:#22d3ee; --brand2:#38bdf8; --brand3:#818cf8;
+}
+[data-theme="sunset"]{
+  --bg:#160d08; --panel:#20120a; --panel-deep:#170e09;
+  --text:#ffeedd; --muted:#e6c9b6; --line:#3a2619; --grid:#2b1b12;
+  --brand1:#fb923c; --brand2:#f472b6; --brand3:#f59e0b;
+}
+[data-theme="forest"]{
+  --bg:#07160d; --panel:#0c2317; --panel-deep:#0a1c13;
+  --text:#e8ffef; --muted:#b7d5c0; --line:#244337; --grid:#183328;
+  --brand1:#34d399; --brand2:#22c55e; --brand3:#a3e635;
+}
+[data-theme="orchid"]{
+  --bg:#100616; --panel:#160a1e; --panel-deep:#12071a;
+  --text:#f7e9ff; --muted:#d8b6ea; --line:#3a2552; --grid:#2a1a3b;
+  --brand1:#c084fc; --brand2:#a78bfa; --brand3:#f472b6;
+}
+[data-theme="white"]{
+  --bg:#ffffff; --panel:#f6f7f9; --panel-deep:#eef1f5;
+  --text:#0f172a; --muted:#475569; --line:#d5d9e1; --grid:#e6eaf1;
+  --brand1:#2563eb; --brand2:#7c3aed; --brand3:#f59e0b; --ink:#0b0f19;
+}
+
+html, body { scroll-behavior:smooth; }
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.font-display{ font-family: "Playfair Display", serif; }
+
+/* Core UI */
+.card{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.h2{ font-size: 1.75rem; font-weight: 700; }
+.h3{ font-weight: 700; }
+.h4{ font-weight: 700; }
+.muted{ color: var(--muted); }
+
+.highlight{
+  background: linear-gradient(90deg,var(--brand2),var(--brand3));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+.btn{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .55rem .9rem;
+  font-weight: 600;
+}
+.btn:hover{ border-color: var(--brand2); }
+.btn.small{ padding: .35rem .7rem; font-weight: 600; font-size:.9rem; }
+.btn-primary{
+  background: linear-gradient(90deg, var(--brand2), var(--brand3));
+  color: var(--ink);
+  border-radius: 12px; padding:.6rem .95rem; font-weight:700;
+}
+.input{
+  width:100%; background: var(--panel-deep);
+  border:1px solid var(--line); border-radius:12px;
+  padding:.7rem .9rem; outline:none;
+}
+.input:focus{ border-color: var(--brand2); box-shadow:0 0 0 4px color-mix(in oklab, var(--brand2), transparent 80%); }
+.label{ display:block; font-size:.9rem; color:var(--muted); margin-bottom:.3rem; }
+.tag{ @apply hidden sm:flex items-center gap-2 text-xs border rounded-full px-3 py-1; border-color:var(--line); background:var(--panel); }
+
+.banner{ height: 160px; background-image: linear-gradient(135deg, var(--from,#000), var(--to,#111)); }
+.banner.from-\[\#38bdf8\].to-\[\#a78bfa\]{ --from:#38bdf8; --to:#a78bfa; }
+.banner.from-\[\#34d399\].to-\[\#06b6d4\]{ --from:#34d399; --to:#06b6d4; }
+.banner.from-\[\#f59e0b\].to-\[\#ef4444\]{ --from:#f59e0b; --to:#ef4444; }
+
+.tool, .chip{
+  display:inline-block; padding:.4rem .7rem; border:1px solid var(--line);
+  background: var(--panel-deep); border-radius:999px; font-size:.85rem; margin:.25rem .3rem 0 0;
+}
+
+.meter{
+  position:relative; background: var(--panel-deep);
+  border:1px solid var(--line); border-radius:12px; height:42px;
+  display:flex; align-items:center; padding:0 .8rem; margin:.8rem 0;
+}
+.meter span{
+  position:absolute; inset:0; width:0; height:100%;
+  background: linear-gradient(90deg,var(--brand2),var(--brand3));
+  border-radius:12px; opacity:.3;
+}
+.meter label{ position:relative; z-index:1; font-weight:600; }
+.meter b{ margin-left:auto; position:relative; z-index:1; }
+
+.stat{ font-weight:800; font-size:1.25rem; color: var(--text); }
+
+.project{ overflow:hidden; }
+.project:hover{ border-color: var(--brand2); }
+
+/* No animations defined to respect reduced motion */
