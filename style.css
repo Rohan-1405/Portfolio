@@ -12,6 +12,72 @@
   --brand3:#f472b6;
 }
 
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons a {
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.resume-section {
+  background: url('https://images.unsplash.com/photo-1614850715649-1d0106293bd1') no-repeat center/cover;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* dark overlay */
+.resume-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 20, 0.7);
+}
+
+.resume-content {
+  position: relative;
+  z-index: 1;
+}
+
+.resume-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.resume-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.resume-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.resume-btn:hover {
+  background: #2563eb;
+}
+
 /* Themes */
 [data-theme="ocean"]{
   --bg:#0a1220; --panel:#0f1b2f; --panel-deep:#0a1526;
@@ -81,7 +147,24 @@ body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sa
 }
 .input:focus{ border-color: var(--brand2); box-shadow:0 0 0 4px color-mix(in oklab, var(--brand2), transparent 80%); }
 .label{ display:block; font-size:.9rem; color:var(--muted); margin-bottom:.3rem; }
-.tag{ @apply hidden sm:flex items-center gap-2 text-xs border rounded-full px-3 py-1; border-color:var(--line); background:var(--panel); }
+/* .tag{ @apply hidden sm:flex items-center gap-2 text-xs border rounded-full px-3 py-1; border-color:var(--line); background:var(--panel); } */
+
+.tag{
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  background: var(--panel);
+}
+
+@media (min-width: 640px){
+  .tag{
+    display: flex;
+  }
+}
 
 .banner{ height: 160px; background-image: linear-gradient(135deg, var(--from,#000), var(--to,#111)); }
 .banner.from-\[\#38bdf8\].to-\[\#a78bfa\]{ --from:#38bdf8; --to:#a78bfa; }

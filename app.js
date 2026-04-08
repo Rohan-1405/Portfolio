@@ -54,21 +54,57 @@ document.addEventListener('DOMContentLoaded', () => {
   (function(){ const first = document.querySelector('[data-filter="all"]'); first && setActive(first); applyFilter(); })();
 
   // Modal
-  const modal = document.getElementById('modal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const closeModal = document.getElementById('closeModal');
-  document.querySelectorAll('.open-modal').forEach(btn => {
-    btn.addEventListener('click', () => {
-      modalTitle.textContent = btn.dataset.title || 'Project';
-      modalDesc.textContent = btn.dataset.desc || '';
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    });
+// Modal
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const closeModal = document.getElementById('closeModal');
+
+const liveBtn = document.getElementById('liveBtn');
+const repoBtn = document.getElementById('repoBtn');
+
+document.querySelectorAll('.open-modal').forEach(btn => {
+  btn.addEventListener('click', () => {
+    modalTitle.textContent = btn.dataset.title || 'Project';
+    modalDesc.textContent = btn.dataset.desc || '';
+
+    // 🔥 Dynamic links
+    liveBtn.href = btn.dataset.live || "#";
+    repoBtn.href = btn.dataset.repo || "#";
+
+    // Optional: hide button if no link
+    liveBtn.style.display = btn.dataset.live ? "block" : "none";
+    repoBtn.style.display = btn.dataset.repo ? "block" : "none";
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
   });
-  function hideModal(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
-  closeModal?.addEventListener('click', hideModal);
-  modal?.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+});
+
+function hideModal(){
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
+
+closeModal?.addEventListener('click', hideModal);
+modal?.addEventListener('click', (e) => {
+  if (e.target === modal) hideModal();
+});
+  // const modal = document.getElementById('modal');
+  // const modalTitle = document.getElementById('modalTitle');
+  // const modalDesc = document.getElementById('modalDesc');
+  // const closeModal = document.getElementById('closeModal');
+  // document.querySelectorAll('.open-modal').forEach(btn => {
+  //   btn.addEventListener('click', () => {
+  //     modalTitle.textContent = btn.dataset.title || 'Project';
+  //     modalDesc.textContent = btn.dataset.desc || '';
+  //     modal.classList.remove('hidden');
+  //     modal.classList.add('flex');
+  //   });
+  // });
+  // function hideModal(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
+  // closeModal?.addEventListener('click', hideModal);
+  // modal?.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
 
   // Contact local storage
   const form = document.getElementById('contactForm');
